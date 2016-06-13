@@ -3,7 +3,9 @@
  * This file is only needed to run on OpsWorks (see https://github.com/nodejs-osaka/opsworks-hapi-tutorial)
  */
 var Hapi = require('hapi');
-var server = new Hapi.Server('0.0.0.0', 80);
+//var server = new Hapi.Server('0.0.0.0', 80);
+var server = new Hapi.Server();
+server.connection({ port: 80 });
 
 server.route({
     method: 'GET',
